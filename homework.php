@@ -165,7 +165,7 @@ define("HOST", "moodle.eek.ee");
     </td>
   </tr>
   <tr>
-    <td>10</td>                                                  <!-- 9 -->             
+    <td>10</td>                                                  <!-- 10 -->             
     <td>$ref=&$a; $ref=10; echo $a;</td>
     <td>
       <?php
@@ -176,7 +176,7 @@ define("HOST", "moodle.eek.ee");
     </td>
   </tr>
   <tr>
-    <td>11</td>                                                  <!-- 9 -->             
+    <td>11</td>                                                  <!-- 11 -->             
     <td>echo HOST;</td>
     <td>
       <?php
@@ -185,7 +185,7 @@ define("HOST", "moodle.eek.ee");
     </td>
   </tr>
   <tr>
-    <td>12</td>                                                  <!-- 9 -->             
+    <td>12</td>                                                  <!-- 12 -->             
     <td>echo $str.$nol + 1 . '&lt;br&gt;'; <br> echo gettype($str) . $nol . 1;</td>
     <td>
       <?php
@@ -195,15 +195,67 @@ define("HOST", "moodle.eek.ee");
       ?>
     </td>
   </tr>
+  <tr>
+  <tr>
+    <td>13</td>                                                  <!-- 13 -->             
+    <td>      &lt;?php $colours = array(<br>"каждый" => "red",<br>
+     "охотник" => "orange",<br>
+      "желает" => "yellow",<br>
+       "знать" => "green",<br>
+       "где" => "lightblue",<br>
+       "сидит" => "blue",<br>
+       "фазан" => "purple");<br> 
+      
+      asort($colours);?><br>
+       &lt;table> <br>
+       &lt;tr> <br>
+        &lt;?php foreach <br>
+        ($colours as $key => $value) { <br>
+            echo "&lt;td>$key&lt;/td>"; <br>
+          } ?> <br>
+          &lt;/tr> <br>
+          &lt;tr> <br>
+        &lt;?php foreach <br>
+        ($colours as $key => $value) { ?> <br>
+            &lt;td style="background-color: &lt;?php echo $value; ?>;">&lt;?php echo $value;}?>&lt;/td><br>
+          &lt;/tr><br>
+          &lt;/table><br>
+    <td>
+      <?php $colours = array(
+      "каждый" => "red", 
+      "охотник" => "orange", 
+      "желает" => "yellow", 
+      "знать" => "green", 
+      "где" => "lightblue", 
+      "сидит" => "blue", 
+      "фазан" => "purple");
+      
+      asort($colours);
+      ?>
+      <table>
+        <tr>
+          <?php 
+          foreach ($colours as $key => $value) {
+            echo "<td>$key</td>";
+          } ?>
+        </tr>
+        <tr>
+          <?php 
+          foreach ($colours as $key => $value) { ?>
+          <td style="background-color: <?php echo $value; ?>;"><?php echo $value;}?></td>
 
-
-
-
-
-
-</table>
-
-
-    
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>14</td>                                                  <!-- 14 -->             
+    <td>echo HOST;</td>
+    <?php function f_color(int $a = 0) {
+           $result = $a % 2 == 0 ? "<p style='color:green;'>Четное число</p>" : "<p style='color:red;'>Нечетное число</p>";
+           echo $result; }?>
+    <td><?php f_color(4)."<br>".f_color(5) ?></td>       
+  </tr>
+</table>    
 </body>
 </html>
