@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon_dark4.png">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      font-size: 40px;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+    th, td {
+    border: 5px solid black;
+    padding: 12px;
+    }
+  </style>
+  <title>Homework</title>
 </head>
 <body>
 
@@ -37,20 +49,15 @@ define("HOST", "moodle.eek.ee");
 
 /* Вывод значения переменной на экран */
 
-###
-
 //echo $a, "\n";
-
 
 ?>
 
-
-
 <table>
   <tr>
-    <td>Task number</td>
-    <td>Solution</td>
-    <td>Result</td>
+    <td><b>Task number</b></td>
+    <td><b>Solution</b></td>
+    <td><b>Result</b></td>
   </tr>
   <tr>
     <td>1</td>                                                      <!-- 1 -->                    
@@ -69,17 +76,17 @@ define("HOST", "moodle.eek.ee");
     <td>try {<br> 
         $a + $str;<br>
         } catch (Error $e) {<br>
-        echo "Происходит ошибка: " . $e->getMessage();<br><br> 
-        https://netgen.io/blog/modern-error-handling-in-php
+        echo "Происходит ошибка: " . $e->getMessage();}<br><br> 
+       # https://netgen.io/blog/modern-error-handling-in-php
     </td>
     <td>
       <?php   
         try {
         $a + $str;
         } catch (Error $e) {
-        echo "Происходит ошибка: " . $e->getMessage();
+        echo "Происходит ошибка: " . $e->getMessage();}      
         # https://netgen.io/blog/modern-error-handling-in-php
-      }?>
+      ?>
     </td>
   </tr>
   <tr>
@@ -87,19 +94,19 @@ define("HOST", "moodle.eek.ee");
     <td>echo match (true) {<br>
         $a > $str  => "$a больше чем $str",<br>
         $a < $str  => "$a меньше чем $str",<br>
-        $a == $str => "$a рввно $str (не строгое сравнение)",<br>
+        $a == $str => "$a рaвно $str (не строгое сравнение)",<br>
         $a === $str => "$a равно $str (строгое сравнение)",<br>
-        default => "Нельзя сравнить"
+        default => "Нельзя сравнить"}
     </td>
     <td>
       <?php
         echo match (true) {
-        $a > $str  => "$a больше чем $str",
-        $a < $str  => "$a меньше чем $str",
-        $a == $str => "$a рввно $str (не строгое сравнение)",
+        $a > $str => "$a больше чем $str",
+        $a < $str => "$a меньше чем $str",
+        $a == $str => "$a рaвно $str (не строгое сравнение)",
         $a === $str => "$a равно $str (строгое сравнение)",
-        default => "Нельзя сравнить"
-      }?>
+        default => "Нельзя сравнить}"}
+      ?>
     </td>
   </tr>
   <tr>
@@ -107,15 +114,15 @@ define("HOST", "moodle.eek.ee");
     <td>echo match (true) {<br>
         $nol == $pusto => "$nol рввно $pusto (не строгое сравнение)",<br>
         $nol === $pusto => "$nol равно $pusto (строгое сравнение)",<br>
-        default => "Нельзя сравнить"
+        default => "Нельзя сравнить"}
     </td>
     <td>
       <?php
         echo match (true) {
         $nol == $pusto => "$nol рввно $pusto (не строгое сравнение)",
         $nol === $pusto => "$nol равно $pusto (строгое сравнение)",
-        default => "Нельзя сравнить"
-      }?>
+        default => "Нельзя сравнить"}
+      ?>
     </td>
   </tr>
   <tr>
@@ -191,7 +198,6 @@ define("HOST", "moodle.eek.ee");
       <?php
          echo $str.$nol + 1 . '<br>';
          echo gettype($str) . $nol . 1;
-
       ?>
     </td>
   </tr>
@@ -228,8 +234,7 @@ define("HOST", "moodle.eek.ee");
       "знать" => "green", 
       "где" => "lightblue", 
       "сидит" => "blue", 
-      "фазан" => "purple");
-      
+      "фазан" => "purple");   
       asort($colours);
       ?>
       <table>
@@ -243,14 +248,20 @@ define("HOST", "moodle.eek.ee");
           <?php 
           foreach ($colours as $key => $value) { ?>
           <td style="background-color: <?php echo $value; ?>;"><?php echo $value;}?></td>
-
         </tr>
       </table>
     </td>
   </tr>
   <tr>
     <td>14</td>                                                  <!-- 14 -->             
-    <td>echo HOST;</td>
+    <td>
+    &lt;?php function f_color(int $a = 0) { <br>
+           $result = $a % 2 == 0 ? <br>
+           "&lt;p style='color:green;'>Четное число&lt;/p>" : <br>
+           "&lt;p style='color:red;'>Нечетное число&lt;/p>"; <br>
+           echo $result; }?> <br><br>
+           &lt;td>&lt;?php f_color(4)."&lt;br>".f_color(5) ?>&lt;/td>  
+    </td>
     <?php function f_color(int $a = 0) {
            $result = $a % 2 == 0 ? "<p style='color:green;'>Четное число</p>" : "<p style='color:red;'>Нечетное число</p>";
            echo $result; }?>
