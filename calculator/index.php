@@ -8,6 +8,11 @@
 <body>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+<!-- insures the form submits to the !same page! while preventing security vulnerabilities like XSS attacks. 
+XSS (Cross-Site Scripting) is a type of security vulnerability that allows attackers to inject malicious scripts 
+(usually JavaScript) into web pages that are then viewed by other users. These scripts can steal user data, 
+modify webpage content, or redirect users to malicious sites. 
+-->
     <input type="number" name="num01" placeholder="Number one" required>
     <select name="operator">
         <option value="add">+</option>
@@ -20,11 +25,11 @@
 </form>
 
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){ # ensures the script only runs when the form is submitted
 
     //Grabbing the values from the form
 
-    $num01 = filter_input(INPUT_POST, "num01", FILTER_SANITIZE_NUMBER_FLOAT);
+    $num01 = filter_input(INPUT_POST, "num01", FILTER_SANITIZE_NUMBER_FLOAT); 
     $num02 = filter_input(INPUT_POST, "num02", FILTER_SANITIZE_NUMBER_FLOAT);
     $operator = htmlspecialchars($_POST["operator"]);
 
