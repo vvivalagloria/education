@@ -10,9 +10,23 @@
     <form action="includes/formhandler.inc.php" method="post">
         <input type="text" name="username" placeholder="Username"><br><br>
         <input type="password" name="pwd" placeholder="Password"><br><br>        
-        <input type="text" name="email" placeholder="E-mail"><br><br>
-        
+        <input type="text" name="email" placeholder="E-mail"><br><br>       
         <button>Signup</button>
+    </form>
+
+    <h1>Change account</h1>
+    <form action="includes/userupdate.inc.php" method="post">
+        <input type="text" name="username" placeholder="Username"><br><br>
+        <input type="password" name="pwd" placeholder="Password"><br><br>        
+        <input type="text" name="email" placeholder="E-mail"><br><br>      
+        <button>Update</button>
+    </form>
+
+    <h1>Delete account</h1>
+    <form action="includes/userdelete.inc.php" method="post">
+        <input type="text" name="username" placeholder="Username"><br><br>
+        <input type="password" name="pwd" placeholder="Password"><br><br>               
+        <button>Delete</button>
     </form>
 </body>
 </html>
