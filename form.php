@@ -6,6 +6,12 @@
     <title>Simple Form</title>
 </head>
 <body>
+    <h1>Search</h1>
+    <form action="search.php" method="post">
+        <lable for="search">Search for user:</lable><br><br>     
+        <input id="search" type="text" name="usersearch" placeholder="Search..."><br><br>       
+        <button>Search</button>
+    </form>
     <h1>Signup</h1>
     <form action="includes/formhandler.inc.php" method="post">
         <input type="text" name="username" placeholder="Username"><br><br>
