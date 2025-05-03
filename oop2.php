@@ -1,3 +1,61 @@
+<?php
+
+class Figure {
+
+    protected $area;
+    protected $color;
+    protected const NUM_SIDES = 0;
+
+    public function infoAbout(){
+        return "Это геометрическая фигура!";
+    }
+
+}
+
+class Rectangle extends Figure{
+
+    private $a, $b;
+    const NUM_SIDES = 4;
+
+    public function __construct($a = 0, $b = 0) {
+        $this->a = $a;
+        $this->b = $b;
+    }
+
+    public function getArea() {
+        return $area = $this->a * $this->b;
+    }
+
+    final public function infoAbout(){
+        return "Это класс прямоугольник. У него " . self::NUM_SIDES . " стороны.";
+    }
+}
+
+class Square extends Figure {
+ 
+    private $a;
+    const NUM_SIDES = 4;
+
+    public function __construct($a = 0) {
+        $this->a = $a;
+    }
+
+    public function getArea() {
+        return $area = $this->a * $this->a;
+    }
+
+    final public function infoAbout(){
+        return "Это класс квадрат. У него " . self::NUM_SIDES . " стороны.";
+    }
+
+}
+
+class Triangle extends Figure {  
+
+    private $a, $b, $c;
+    const NUM_SIDES = 3;
+
+    public function __construct($a = 0, $b = 0, $c = 0) {
         $this->a = $a;
         $this->b = $b;
         $this->c = $c;
